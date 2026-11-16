@@ -1,0 +1,8 @@
+.env
+venv/
+__pycache__/
+*.pyc
+.ucrp.pid
+.ucrp.port
+ucrp.log
+.DS_Store

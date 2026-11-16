@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>University Compatibility Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>University Compatibility Platform</h1>
+    <p>Find the university, faculty and course that fit you best, with verifiable sources.</p>
+  </header>
+
+  <main class="container">
+    <!-- ============ Profile form ============ -->
+    <section class="card" id="form-section">
+      <h2>Your profile</h2>
+      <form id="profile-form" novalidate>
+        <div class="grid">
+          <label>Mode
+            <select id="mode">
+              <option value="local">Local (Australia)</option>
+              <option value="international">International</option>
+            </select>
+          </label>
+
+          <label>Student type
+            <select id="student_type">
+              <option value="international">International student</option>
+              <option value="domestic">Domestic student</option>
+            </select>
+          </label>
+
+          <label>Academic level
+            <select id="level">
+              <option>Foundation Studies</option>
+              <option>University Preparation</option>
+              <option>Diploma</option>
+              <option>Advanced Diploma</option>
+              <option>Associate Degree</option>
+              <option selected>Bachelor</option>
+              <option>Honours</option>
+              <option>Graduate Certificate</option>
+              <option>Graduate Diploma</option>
+              <option>Master</option>
+              <option>Master by Research</option>
+              <option>MPhil</option>
+              <option>PhD</option>
+              <option>Pathway Program</option>
+              <option>Professional Program</option>
+            </select>
+          </label>
+
+          <label>Field of study
+            <input id="field_of_study" type="text" placeholder="e.g. Mechatronics Engineering" required />
+          </label>
+
+          <label class="span-2">Interests (comma separated)
+            <input id="interests" type="text" placeholder="e.g. robotics, embedded systems, AI" />
+          </label>
+
+          <label>Average grade (%)
+            <input id="academic_percent" type="number" min="0" max="100" step="0.1" placeholder="e.g. 78" />
+          </label>
+
+          <label>IELTS overall
+            <input id="ielts" type="number" min="0" max="9" step="0.5" placeholder="e.g. 6.5" />
+          </label>
+
+          <label>Budget per year
+            <input id="budget_per_year" type="number" min="0" step="100" placeholder="e.g. 50000" />
+          </label>
+
+          <label>Currency
+            <select id="currency">
+              <option>AUD</option><option>USD</option><option>NZD</option><option>SGD</option>
+              <option>CAD</option><option>JPY</option><option>KRW</option><option>TWD</option>
+              <option>CNY</option><option>EUR</option><option>GBP</option><option>CHF</option><option>SEK</option>
+            </select>
+          </label>
+
+          <label class="span-2">Career goal
+            <input id="career_goal" type="text" placeholder="e.g. robotics engineer in industrial automation" />
+          </label>
+
+          <label class="span-2">Preferred locations (comma separated)
+            <input id="preferred_locations" type="text" placeholder="e.g. Sydney, Melbourne" />
+          </label>
+
+          <label>Number of results
+            <select id="max_results">
+              <option>3</option><option selected>5</option><option>6</option><option>8</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Shown only in International mode -->
+        <fieldset id="countries-box" class="hidden">
+          <legend>Countries (choose up to 3)</legend>
+          <div class="checks" id="countries"></div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit" id="submit-btn" class="primary">Analyze</button>
+          <span id="status" class="status" role="status"></span>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============ Results ============ -->
+    <section id="results-section" class="hidden">
+      <div class="results-head">
+        <h2>Results</h2>
+        <button id="compare-btn" class="secondary" disabled>Compare selected (0)</button>
+      </div>
+      <p class="hint">Select 2 to 4 programs to compare. Data labels: <span class="badge verified">verified</span>
+        <span class="badge estimated">estimated</span> <span class="badge not_found">not found</span></p>
+      <div id="results"></div>
+    </section>
+
+    <!-- ============ Comparison ============ -->
+    <section id="compare-section" class="card hidden">
+      <h2>Comparison</h2>
+      <div class="table-wrap" id="compare-table"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Scores are decision support only. Always confirm details on the official university website.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
