@@ -2,6 +2,8 @@
 
 An AI-assisted web platform that helps students find, evaluate and compare universities, faculties and courses based on their academic profile, finances, goals and personal circumstances. Instead of returning a single "best university", UCRP produces an explainable compatibility score for every option and shows which pieces of data are verified, estimated or missing.
 
+## Website link: https://university-compatibility-platform.onrender.com
+
 ## Key Features
 
 - **Three levels of analysis:** university, faculty/school and course/program.
